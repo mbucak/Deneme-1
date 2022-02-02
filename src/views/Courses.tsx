@@ -2,14 +2,13 @@ import {
   AddRounded as AddIcon
 } from '@mui/icons-material';
 import { Fab, Tooltip } from '@mui/material';
-import React from 'react';
+import { makeStyles } from '@mui/styles';
+import { default as React } from 'react';
 import { Link } from 'react-router-dom';
-import makeStyles from '@mui/styles/makeStyles';
-import HomeContainers from '../containers/HomeContainers';
+import CoursesContainer from '../containers/CoursesContainer';
 
 
-
-const useStyles = makeStyles(({
+const useStyles = makeStyles({
   root: {
     height: 'calc(100vh - 90px)',
     background: '#f2f2f2',
@@ -20,22 +19,18 @@ const useStyles = makeStyles(({
     marginLeft: 25,
   },
 
-}));
+});
 
-export default function HomePage() {
+export default function Courses() {
   const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <div>
       <Tooltip title={"Yeni Ders Ekle"}>
         <Fab className={classes.fab} component={Link} to="/dersler/yeni" color="primary" sx={{ position: 'absolute', bottom: 16, right: 16 }}>
           <AddIcon />
         </Fab>
       </Tooltip>
-      <div className={classes.fab}>Tüm Dersler</div>
-      <div >
-        <HomeContainers />
-      </div>
+      <CoursesContainer />
     </div>
-  )
+  );
 }

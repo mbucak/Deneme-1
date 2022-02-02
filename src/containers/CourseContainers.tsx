@@ -4,10 +4,9 @@ import CardHome from '../components/CardHome'
 
 
 export default function CourseContainers() {
-    return (
-        <div>
-            <CardHome/>   
-           
-        </div>
-    )
+  return (
+    <div>
+      <CardHome />
+    </div>
+  )
 }

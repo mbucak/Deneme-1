@@ -10,6 +10,8 @@ import ArtificialLesson from './views/ArtificialLesson';
 import CyberLesson from './views/CyberLesson';
 import MobileLesson from './views/MobileLesson';
 import GameLesson from './views/GameLesson';
+import Courses from './views/Courses';
+import CourseDetail from './views/CourseDetail';
 
 
 
@@ -23,17 +25,10 @@ function App() {
     </Routes> */}
       <Layout>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/dersler" element={<Lessons/>} />
-          <Route path="/yenisayfa" element={<NewPage />} />
-          <Route path="/dersler/yeni" element={<AddDeleteLesson />} />
-
-          <Route path="/1" element={<ArtificialLesson />} />
-          <Route path="/2" element={<CyberLesson />} />
-          <Route path="/3" element={<MobileLesson />} />
-          <Route path="/4" element={<GameLesson />} />
-
-          <Route path="/secili" element={<CourseViewing />} />
+          <Route path="/" element={<Courses />} />
+          <Route path="courses/:id" element={<CourseDetail />} />
+          <Route path="/new-page" element={<NewPage />} />
+          <Route path="/course/new" element={<AddDeleteLesson />} />
         </Routes>
       </Layout>
     </BrowserRouter>
